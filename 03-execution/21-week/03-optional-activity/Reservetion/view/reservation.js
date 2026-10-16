@@ -1,6 +1,6 @@
 var reservationController = new ReservationController();
 
-// Muestra la lista de reservas en la página
+// Shows the list of reservations on the page
 function showList() {
   var ul = document.getElementById("list");
   ul.innerHTML = "";
@@ -8,15 +8,15 @@ function showList() {
     var li = document.createElement("li");
     li.textContent =
       reservations[i].id + " - " + reservations[i].name +
-      " (cliente " + reservations[i].client_id + ")";
+      " (client " + reservations[i].client_id + ")";
     ul.appendChild(li);
   }
 }
 
-// Al abrir la página, carga las reservas con AJAX y las muestra
+// When the page opens, load the reservations using AJAX and show them
 reservationController.load(showList);
 
-// Cuando se envía el formulario
+// When the form is submitted
 document.getElementById("formReservation").addEventListener("submit", function (e) {
   e.preventDefault();
 

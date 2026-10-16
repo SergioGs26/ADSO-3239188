@@ -1,14 +1,14 @@
 var clientController = new ClientController();
 
-// Al abrir la página, carga los clientes con AJAX
+// When the page opens, load the clients using AJAX
 clientController.load(function () {
   document.getElementById("messageClient").textContent =
-    "Clientes cargados: " + clients.length;
+    "Clients loaded: " + clients.length;
 });
 
-// Cuando se envía el formulario
+// When the form is submitted
 document.getElementById("formClient").addEventListener("submit", function (e) {
-  e.preventDefault(); // evita que la página se recargue
+  e.preventDefault(); // prevents the page from reloading
 
   var c = new Client(
     null,

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Booking</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>Appointment Booking</h1>
+
+  <h2>1. Register client</h2>
+  <form id="formClient">
+    <select id="type_document">
+      <option value="CC">CC</option>
+      <option value="TI">TI</option>
+      <option value="CE">CE</option>
+    </select>
+    <input id="document" placeholder="Document">
+    <input id="c_name" placeholder="Name">
+    <input id="address" placeholder="Address">
+    <input id="phone" placeholder="Phone">
+    <input id="email" placeholder="Email">
+    <button type="submit">Save client</button>
+  </form>
+  <p id="messageClient"></p>
+
+  <h2>2. Book appointment</h2>
+  <form id="formReservation">
+    <input id="client_id" placeholder="Client ID">
+    <input id="name" placeholder="Appointment name">
+    <textarea id="description" placeholder="Description"></textarea>
+    <button type="submit">Book</button>
+  </form>
+  <p id="message"></p>
+
+  <h2>Reservations</h2>
+  <ul id="list"></ul>
+
+  <!-- Order matters: model first, then controller, view last -->
+  <script src="model/client.js"></script>
+  <script src="model/reservation.js"></script>
+  <script src="controller/client.js"></script>
+  <script src="controller/reservation.js"></script>
+  <script src="view/client.js"></script>
+  <script src="view/reservation.js"></script>
+</body>
+</html>
